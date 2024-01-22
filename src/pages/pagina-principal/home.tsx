@@ -60,11 +60,11 @@ export default function Principal() {
         }}
       >
         <GridItem gap={3}>
-          <Image
+          {/* <Image
             src={imagen.src}
             alt="logo"
             width={200}
-          />
+          /> */}
         </GridItem>
         <GridItem>
           <FormControl onSubmit={handleSubmit}>

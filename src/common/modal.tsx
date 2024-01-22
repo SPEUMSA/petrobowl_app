@@ -70,7 +70,7 @@ export function ModalComponente({
         }}
       >
         {valor}
-        <Image src={imagen} alt="logospe" width={"50px"} />
+        {/* <Image src={imagen} alt="logospe" width={"50px"} /> */}
       </GridItem>
       <Modal isOpen={isOpen} onClose={onClose} isCentered size={"lg"}>
         <ModalOverlay />

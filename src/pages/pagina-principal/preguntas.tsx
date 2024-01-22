@@ -158,7 +158,7 @@ export default function Preguntas() {
         }}
       >
         <GridItem gap={3} sx={{ display: "flex", justifyContent: "center" }}>
-          <Image src={imagen.src} alt="logo" width={200} />
+          {/* <Image src={imagen.src} alt="logo" width={200} /> */}
         </GridItem>
         <Grid sx={{justifyContent: 'center', margin: '10px'}}>
           <ImportarArchivoModal
