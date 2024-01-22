@@ -19,8 +19,9 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useState } from "react";
+import logospe from "/public/image/logo_blanco.png";
+import logopetrobowl from "/public/image/logo_petrobowl_noyear-evergreen.png";
 export default function Principal() {
   const [formData, setFormData] = useState({
     nombrePartida: "",
@@ -48,11 +49,7 @@ export default function Principal() {
         }}
       >
         <GridItem gap={3}>
-          <Image
-            src={"../../../public/logo_petrobowl_noyear-evergreen.png"}
-            alt="logo"
-            width={200}
-          />
+          <Image src={logopetrobowl.src} alt="logo" width={200} height={200} />
         </GridItem>
         <GridItem>
           <FormControl>
@@ -113,7 +110,7 @@ export default function Principal() {
           </FormControl>
           <Link
             href={{
-              pathname: "/pagina-principal/preguntas",
+              pathname: "/pagina-principal/index",
               query: formData,
             }}
             passHref
@@ -124,11 +121,7 @@ export default function Principal() {
           </Link>
         </GridItem>
         <Box sx={{ height: "10px" }} />
-        <Image
-          src={"../../../public/logo_blanco.png"}
-          alt="logospe"
-          width={90}
-        />
+        <Image src={logospe.src} alt="logospe" width={90} height={90} />
       </Grid>
     </>
   );

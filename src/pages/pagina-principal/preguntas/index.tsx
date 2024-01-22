@@ -3,9 +3,10 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import * as XLSX from "xlsx";
-import ModalComponente from "../../componentes/modal";
-import ImportarArchivoModal from "../../componentes/modalArchivo";
-
+import ModalComponente from "../../../componentes/modal";
+import ImportarArchivoModal from "../../../componentes/modalArchivo";
+import logospe from "/public/image/logo_blanco.png";
+import logopetrbowl from "/public/image/logo_petrobowl_noyear-evergreen.png";
 interface ExcelDataItem {
   ID: string;
   PREGUNTA: string;
@@ -156,11 +157,7 @@ export default function Preguntas() {
         }}
       >
         <GridItem gap={3} sx={{ display: "flex", justifyContent: "center" }}>
-          <Image
-            src={"../../../public/logo_petrobowl_noyear-evergreen.png"}
-            alt="logo"
-            width={200}
-          />
+          <Image src={logopetrbowl.src} alt="logo" width={200} height={200} />
         </GridItem>
         {nombrePartida}
         {fecha}
@@ -205,7 +202,7 @@ export default function Preguntas() {
                         preguntaValor={`${a.PREGUNTA}`}
                         respuestaValor={`${a.RESPUESTA}`}
                         valor={a.VALOR}
-                        imagen={"../../../public/logo_blanco.png"}
+                        imagen={logospe.src}
                         tiempo={tiempo?.toString() ?? "0"}
                       />
                     ))}

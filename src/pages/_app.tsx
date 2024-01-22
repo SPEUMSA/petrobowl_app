@@ -16,17 +16,7 @@ const theme = extendTheme({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <div
-        style={{
-          backgroundColor: theme.colors.brand[900],
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          color: theme.colors.brand[100],
-        }}
-      >
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     </ChakraProvider>
   );
 }
