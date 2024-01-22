@@ -17,11 +17,10 @@ import {
   GridItem,
   Box,
 } from "@chakra-ui/react";
-import Image from 'next/image'
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import imagen from "../../../public/logo_petrobowl_noyear-evergreen.png";
-import spelogo from "../../../public/logo_blanco.png"
 export default function Principal() {
   const [formData, setFormData] = useState({
     nombrePartida: "",
@@ -31,17 +30,6 @@ export default function Principal() {
     tiempo: 0,
     unidadMedida: "Segundos",
   });
-  const router = useRouter();
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-
-    // Enviar datos a la página de resultados utilizando router.push()
-    router.push({
-      pathname: "./pagina-principal/preguntas",
-      query: formData,
-    });
-  };
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -60,14 +48,14 @@ export default function Principal() {
         }}
       >
         <GridItem gap={3}>
-          {/* <Image
-            src={imagen.src}
+          <Image
+            src={"../../../public/logo_petrobowl_noyear-evergreen.png"}
             alt="logo"
             width={200}
-          /> */}
+          />
         </GridItem>
         <GridItem>
-          <FormControl onSubmit={handleSubmit}>
+          <FormControl>
             <Grid gap={3}>
               <GridItem>
                 {" "}
@@ -123,18 +111,24 @@ export default function Principal() {
               </GridItem>
             </Grid>
           </FormControl>
-          <Button
-            mt={4}
-            colorScheme="teal"
-            type="submit"
-            onClick={handleSubmit}
+          <Link
+            href={{
+              pathname: "/pagina-principal/preguntas",
+              query: formData,
+            }}
+            passHref
           >
-            Iniciar
-          </Button>
+            <Button mt={4} colorScheme="teal">
+              Iniciar
+            </Button>
+          </Link>
         </GridItem>
         <Box sx={{ height: "10px" }} />
-        <Image src={spelogo.src} alt="logospe" width={90}/>
-
+        <Image
+          src={"../../../public/logo_blanco.png"}
+          alt="logospe"
+          width={90}
+        />
       </Grid>
     </>
   );

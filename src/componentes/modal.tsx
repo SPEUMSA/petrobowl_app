@@ -9,11 +9,11 @@ import {
   ModalOverlay,
   useDisclosure,
   GridItem,
-  Image,
   Text,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import { useState } from "react";
-import { ContadorRegresivo } from "./contador";
+import ContadorRegresivo from "./contador";
 
 interface ModalType {
   titulo: string;
@@ -24,7 +24,7 @@ interface ModalType {
   tiempo: string;
 }
 
-export function ModalComponente({
+export default function ModalComponente({
   titulo,
   preguntaValor,
   imagen,
@@ -70,7 +70,7 @@ export function ModalComponente({
         }}
       >
         {valor}
-        {/* <Image src={imagen} alt="logospe" width={"50px"} /> */}
+        <Image src={imagen} alt="logospe" width={50} />
       </GridItem>
       <Modal isOpen={isOpen} onClose={onClose} isCentered size={"lg"}>
         <ModalOverlay />

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 interface ContadorType {
   inicio: number;
 }
-export const ContadorRegresivo = ({ inicio }: ContadorType) => {
+export default function ContadorRegresivo({ inicio }: ContadorType) {
   const [contador, setContador] = useState(inicio);
 
   useEffect(() => {
@@ -37,4 +37,4 @@ export const ContadorRegresivo = ({ inicio }: ContadorType) => {
       {contador === 0 ? "¡Without Time!" : `Time: ${contador}`}
     </Text>
   );
-};
+}

@@ -1,12 +1,10 @@
 import { Button, Grid, GridItem, Text } from "@chakra-ui/react";
-import Image from 'next/image'
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import imagen from "../../../public/logo_petrobowl_noyear-evergreen.png";
 import * as XLSX from "xlsx";
-import spelogo from "../../../public/logo_blanco.png";
-import { ModalComponente } from "@/common/modal";
-import { ImportarArchivoModal } from "@/common/modalArchivo";
+import ModalComponente from "../../componentes/modal";
+import ImportarArchivoModal from "../../componentes/modalArchivo";
 
 interface ExcelDataItem {
   ID: string;
@@ -158,9 +156,18 @@ export default function Preguntas() {
         }}
       >
         <GridItem gap={3} sx={{ display: "flex", justifyContent: "center" }}>
-          {/* <Image src={imagen.src} alt="logo" width={200} /> */}
+          <Image
+            src={"../../../public/logo_petrobowl_noyear-evergreen.png"}
+            alt="logo"
+            width={200}
+          />
         </GridItem>
-        <Grid sx={{justifyContent: 'center', margin: '10px'}}>
+        {nombrePartida}
+        {fecha}
+        {noParticipantes}
+        {modalidad}
+        {unidadMedida}
+        <Grid sx={{ justifyContent: "center", margin: "10px" }}>
           <ImportarArchivoModal
             titulo="Importar preguntas"
             onChange={handleFileChange}
@@ -198,7 +205,7 @@ export default function Preguntas() {
                         preguntaValor={`${a.PREGUNTA}`}
                         respuestaValor={`${a.RESPUESTA}`}
                         valor={a.VALOR}
-                        imagen={spelogo.src}
+                        imagen={"../../../public/logo_blanco.png"}
                         tiempo={tiempo?.toString() ?? "0"}
                       />
                     ))}

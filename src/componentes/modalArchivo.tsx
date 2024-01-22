@@ -16,10 +16,10 @@ interface ImportarArchivoType {
   titulo: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-export const ImportarArchivoModal = ({
+export default function ImportarArchivoModal({
   titulo,
   onChange,
-}: ImportarArchivoType) => {
+}: ImportarArchivoType) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [datos, setDatos] = useState<React.ChangeEvent<HTMLInputElement>>();
@@ -92,4 +92,4 @@ export const ImportarArchivoModal = ({
       </Modal>
     </>
   );
-};
+}
