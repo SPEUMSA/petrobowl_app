@@ -15,9 +15,9 @@ import {
   Button,
   Grid,
   GridItem,
-  Image,
   Box,
 } from "@chakra-ui/react";
+import Image from 'next/image'
 import { useRouter } from "next/router";
 import { useState } from "react";
 import imagen from "../../../public/logo_petrobowl_noyear-evergreen.png";
@@ -63,7 +63,7 @@ export default function Principal() {
           <Image
             src={imagen.src}
             alt="logo"
-            width={"200px"}
+            width={200}
           />
         </GridItem>
         <GridItem>
@@ -133,7 +133,7 @@ export default function Principal() {
           </Button>
         </GridItem>
         <Box sx={{ height: "10px" }} />
-        <Image src={spelogo.src} alt="logospe" width={'90px'}/>
+        <Image src={spelogo.src} alt="logospe" width={90}/>
 
       </Grid>
     </>

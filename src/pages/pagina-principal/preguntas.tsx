@@ -1,4 +1,5 @@
-import { Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import { Button, Grid, GridItem, Text } from "@chakra-ui/react";
+import Image from 'next/image'
 import { useRouter } from "next/router";
 import { useState } from "react";
 import imagen from "../../../public/logo_petrobowl_noyear-evergreen.png";
@@ -157,7 +158,7 @@ export default function Preguntas() {
         }}
       >
         <GridItem gap={3} sx={{ display: "flex", justifyContent: "center" }}>
-          <Image src={imagen.src} alt="logo" width={"200px"} />
+          <Image src={imagen.src} alt="logo" width={200} />
         </GridItem>
         <Grid sx={{justifyContent: 'center', margin: '10px'}}>
           <ImportarArchivoModal
